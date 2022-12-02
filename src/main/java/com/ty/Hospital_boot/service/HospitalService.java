@@ -1,5 +1,5 @@
-package com.ty.Hospital_boot.service;
-
-public class HospitalService {
-
-}
+//package com.ty.Hospital_boot.service;
+//
+//public class HospitalService {
+//
+//}
