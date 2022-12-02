@@ -26,7 +26,7 @@ public class MedOrderService {
 		}
 		medOrder.setTotalprice(totalcost);
 		ResponseStructure<MedOrder> responseStructure = new ResponseStructure<MedOrder>();
-		responseStructure.setSatus(HttpStatus.CREATED.value());
+		responseStructure.setStatus(HttpStatus.CREATED.value());
 		responseStructure.setMessage("Medorder Created ");
 		responseStructure.setData(dao.saveMedOrder(medOrder));
 		return new ResponseEntity<ResponseStructure<MedOrder>>(responseStructure, HttpStatus.CREATED);
@@ -43,7 +43,7 @@ public class MedOrderService {
 		MedOrder medOrder2 = dao.findmedorderbyid(id);
 		if (medOrder2 != null) {
 			medOrder.setId(id);
-			responseStructure.setSatus(HttpStatus.OK.value());
+			responseStructure.setStatus(HttpStatus.OK.value());
 			responseStructure.setMessage("Medorder Updated ");
 			responseStructure.setData(dao.saveMedOrder(medOrder));
 			return new ResponseEntity<ResponseStructure<MedOrder>>(responseStructure, HttpStatus.OK);
@@ -53,7 +53,7 @@ public class MedOrderService {
 
 	public ResponseEntity<ResponseStructure<MedOrder>> servicefindbyid(int id) {
 		ResponseStructure<MedOrder> responseStructure = new ResponseStructure<MedOrder>();
-		responseStructure.setSatus(HttpStatus.FOUND.value());
+		responseStructure.setStatus(HttpStatus.FOUND.value());
 		responseStructure.setMessage(" Found Medorder");
 		responseStructure.setData(dao.findmedorderbyid(id));
 		return new ResponseEntity<ResponseStructure<MedOrder>>(responseStructure, HttpStatus.OK);
@@ -61,7 +61,7 @@ public class MedOrderService {
 
 	public ResponseEntity<ResponseStructure<String>> servicedeletebyid(int id) {
 		ResponseStructure<String> responseStructure = new ResponseStructure<String>();
-		responseStructure.setSatus(HttpStatus.OK.value());
+		responseStructure.setStatus(HttpStatus.OK.value());
 		responseStructure.setMessage("Deleted Medorder");
 		responseStructure.setData(dao.deleteMedOrder(id));
 		return new ResponseEntity<ResponseStructure<String>>(responseStructure, HttpStatus.OK);
