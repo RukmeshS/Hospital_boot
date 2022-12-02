@@ -1,45 +1,38 @@
 package com.ty.Hospital_boot.dto;
 
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
-public class Hospital {
+public class Branch {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	
-	@OneToMany(cascade=CascadeType.ALL)
-	private List<Branch> branches;
-
+	private long phone;
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public List<Branch> getBranches() {
-		return branches;
+	public long getPhone() {
+		return phone;
 	}
-
-	public void setBranches(List<Branch> branches) {
-		this.branches = branches;
-	} 
+	public void setPhone(long phone) {
+		this.phone = phone;
+	}
+	
+	
+	
+	
 }

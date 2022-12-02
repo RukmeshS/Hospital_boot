@@ -11,38 +11,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ty.Hospital_boot.dto.Hospital;
-import com.ty.Hospital_boot.service.HospitalService;
+import com.ty.Hospital_boot.dto.Branch;
+import com.ty.Hospital_boot.service.BranchService;
 import com.ty.Hospital_boot.util.ResponseStructure;
 
 @RestController
-@RequestMapping("hospital")
-public class HospitalController {
+@RequestMapping("branch")
+public class BranchController {
 
 	@Autowired
-	HospitalService hospitalservice;
+	BranchService branchservice;
 	
 	@PostMapping
-	public ResponseEntity<ResponseStructure<Hospital>> saveHospital(@RequestBody Hospital hospital)
+	public ResponseEntity<ResponseStructure<Branch>> saveBranch(@RequestBody Branch branch)
 	{
-		return hospitalservice.saveHospital(hospital);
+		return branchservice.saveBranch(branch);
 	}
 	
 	@GetMapping
-	public ResponseEntity<ResponseStructure<Hospital>> getHospitalById(@RequestParam int id)
+	public ResponseEntity<ResponseStructure<Branch>> getBranchById(@RequestParam int id)
 	{
-		return hospitalservice.getHospitalById(id);
+		return branchservice.getBranchById(id);
 	}
 	
 	@PutMapping
-	public ResponseEntity<ResponseStructure<Hospital>> updateHospitalById(@RequestBody Hospital hospital,@RequestParam int id)
+	public ResponseEntity<ResponseStructure<Branch>> updateBranchById(@RequestBody Branch branch,@RequestParam int id)
 	{
-		return hospitalservice.updateHospital(hospital, id);
+		return branchservice.updateBranch(branch, id);
 	}
 	
 	@DeleteMapping
-	public ResponseEntity<ResponseStructure<String>> deleteHospitalById(@RequestParam int id) 
+	public ResponseEntity<ResponseStructure<String>> deleteBranchById(@RequestParam int id) 
 	{
-		return hospitalservice.deleteHospitalById(id);
+		return branchservice.deleteBranchById(id);
 	}
 }
