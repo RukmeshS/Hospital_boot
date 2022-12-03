@@ -27,12 +27,12 @@ public class MedOrderController {
 	@Autowired
 	MedOrderService service;
 
-	@ApiOperation(value = "Save Medorder", notes = "Used to save Medorder")
-	@ApiResponses(value = { @ApiResponse(code = 500, message = "Internal Server error") })
-	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<ResponseStructure<MedOrder>> saveMedorder(@RequestBody MedOrder medOrder) {
-		return service.servicesaveMedOrder(medOrder);
-	}
+//	@ApiOperation(value = "Save Medorder", notes = "Used to save Medorder")
+//	@ApiResponses(value = { @ApiResponse(code = 500, message = "Internal Server error") })
+//	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<ResponseStructure<MedOrder>> saveMedorder(@RequestBody MedOrder medOrder) {
+//		return service.servicesaveMedOrder(medOrder);
+//	}
 
 	@ApiOperation(value = "Update Medorder", notes = "Used to update Medorder")
 	@ApiResponses(value = { @ApiResponse(code = 500, message = "Internal Server error") })
@@ -49,11 +49,11 @@ public class MedOrderController {
 		return service.servicefindbyid(id);
 	}
 
-	@ApiOperation(value = "Delete Medorder", notes = "Used to delete Medorder")
-	@ApiResponses(value = { @ApiResponse(code = 500, message = "Internal Server error") })
-	@DeleteMapping
-	public ResponseEntity<ResponseStructure<String>> deleteMedorder(@RequestParam int id) {
-		return service.servicedeletebyid(id);
-	}
+//	@ApiOperation(value = "Delete Medorder", notes = "Used to delete Medorder")
+//	@ApiResponses(value = { @ApiResponse(code = 500, message = "Internal Server error") })
+//	@DeleteMapping
+//	public ResponseEntity<ResponseStructure<String>> deleteMedorder(@RequestParam int id) {
+//		return service.servicedeletebyid(id);
+//	}
 
 }
