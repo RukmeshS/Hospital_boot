@@ -20,7 +20,7 @@ public class MedItemsService {
 		MedItems medItems2 = dao.findmeditemsbyid(id);
 		if (medItems2 != null) {
 			medItems.setId(id);
-			responseStructure.setSatus(HttpStatus.OK.value());
+			responseStructure.setStatus(HttpStatus.OK.value());
 			responseStructure.setMessage("MedItems Updated ");
 			responseStructure.setData(dao.updateMedItems(medItems));
 			ResponseEntity<ResponseStructure<MedItems>> entity = new ResponseEntity<ResponseStructure<MedItems>>(
@@ -32,7 +32,7 @@ public class MedItemsService {
 
 	public ResponseEntity<ResponseStructure<MedItems>> servicefindbyid(int id) {
 		ResponseStructure<MedItems> responseStructure = new ResponseStructure<MedItems>();
-		responseStructure.setSatus(HttpStatus.FOUND.value());
+		responseStructure.setStatus(HttpStatus.FOUND.value());
 		responseStructure.setMessage(" Found Medorder");
 		responseStructure.setData(dao.findmeditemsbyid(id));
 		return new ResponseEntity<ResponseStructure<MedItems>>(responseStructure,HttpStatus.FOUND);
